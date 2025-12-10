@@ -18,6 +18,32 @@
     --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
+/* Dark mode colors */
+[data-theme="dark"] {
+    --primary-color: #64b5f6;
+    --secondary-color: #42a5f5;
+    --text-color: #e0e0e0;
+    --text-light: #b0b0b0;
+    --border-color: #404040;
+    --bg-color: #1a1a1a;
+    --bg-light: #2d2d2d;
+    --code-bg: #2d2d2d;
+}
+
+/* Respect system preference */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --primary-color: #64b5f6;
+        --secondary-color: #42a5f5;
+        --text-color: #e0e0e0;
+        --text-light: #b0b0b0;
+        --border-color: #404040;
+        --bg-color: #1a1a1a;
+        --bg-light: #2d2d2d;
+        --code-bg: #2d2d2d;
+    }
+}
+
 body {
     font-family: var(--font-main);
     line-height: 1.6;
@@ -292,6 +318,27 @@ footer {
     text-align: center;
     color: var(--text-light);
     font-size: 0.9rem;
+}
+
+/* Dark mode toggle */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+    background-color: var(--bg-light);
+    border-color: var(--secondary-color);
 }
 
 /* Responsive */
