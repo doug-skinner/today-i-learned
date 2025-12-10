@@ -2,7 +2,7 @@
 
 A collection of concise write-ups on small things I learn day to day across a variety of languages and technologies.
 
-**View the site:** [doug-skinner.github.io/today-i-learned](https://doug-skinner.github.io/today-i-learned/)
+**View the site:** [dsknr.com/today-i-learned](https://dsknr.com/today-i-learned/)
 
 ## Quick Start
 
