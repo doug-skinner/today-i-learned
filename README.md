@@ -178,7 +178,3 @@ Check that `baseurl` in `_config.yml` is set to `/today-i-learned` (with leading
 ## 📄 License
 
 This project is open source and available under the MIT License.
-
-## 🙏 Inspiration
-
-Inspired by the [Today I Learned](https://github.com/jbranchaud/til) format popularized by Josh Branchaud and others in the developer community.
