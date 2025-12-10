@@ -1,0 +1,39 @@
+# Site settings
+title: Today I Learned
+description: Daily discoveries and small wins in coding
+author: Doug Skinner
+email: dskinne12@gmail.com
+url: "https://doug-skinner.github.io"
+baseurl: "/today-i-learned"
+
+# Build settings
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+timezone: America/New_York
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclude files from the build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

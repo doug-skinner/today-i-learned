@@ -1,0 +1,33 @@
+---
+layout: default
+title: Categories
+---
+
+<h2>Browse by Category</h2>
+
+{% assign categories = site.posts | map: 'category' | uniq | sort %}
+
+{% for category in categories %}
+    {% if category %}
+    <div class="category-group" id="{{ category }}">
+        <h2>{{ category }}</h2>
+        <ul class="post-list">
+            {% for post in site.posts %}
+                {% if post.category == category %}
+                <li class="post-list-item">
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                    <div class="post-meta">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">
+                            {{ post.date | date: "%B %d, %Y" }}
+                        </time>
+                    </div>
+                    {% if post.excerpt %}
+                    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+                    {% endif %}
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+{% endfor %}

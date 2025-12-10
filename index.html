@@ -1,0 +1,33 @@
+---
+layout: default
+title: Home
+---
+
+<section class="intro">
+    <h2>Welcome to Today I Learned</h2>
+    <p>A collection of concise write-ups on small things I learn day to day across a variety of languages and technologies.</p>
+</section>
+
+<section class="recent-posts">
+    <h2>Recent Learnings</h2>
+    <ul class="post-list">
+        {% for post in site.posts limit:10 %}
+        <li class="post-list-item">
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <div class="post-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">
+                    {{ post.date | date: "%B %d, %Y" }}
+                </time>
+                {% if post.category %}
+                <span class="category">
+                    <a href="{{ '/categories#' | append: post.category | relative_url }}">{{ post.category }}</a>
+                </span>
+                {% endif %}
+            </div>
+            {% if post.excerpt %}
+            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
