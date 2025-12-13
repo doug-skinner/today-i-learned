@@ -23,7 +23,7 @@ Docker Desktop is a GUI application, not a command-line formula. Homebrew Cask i
 ## What Not to Do
 
 Don't try these variations:
-- `brew install docker` (wrong—this would install docker CLI tools without Desktop)
+- `brew install docker` (installs only CLI tools, not Docker Desktop)
 - `brew cask install docker` (outdated syntax, `cask` is now a flag)
 
 ## After Installation
